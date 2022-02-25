@@ -22,17 +22,13 @@ class Column:
         for i in range (amountOfFloors):
 
             if (buttonFloor < amountOfFloors): 
-                #let callbuttonID = i + 1
                 callButton = CallButton(callbuttonID, buttonFloor, "Up")
                 self.callButtonList.append(callButton)
                 callbuttonID+=1
             
 
             if (buttonFloor > 1): 
-                #let callbuttonID = i + 1
                 callButton = CallButton(callbuttonID, buttonFloor, "Down")
-                #callbuttonID--
-                # return this.callButtonList.push(callButton)
                 self.callButtonList.append(callButton)
                 callbuttonID+=1
             
@@ -49,7 +45,6 @@ class Column:
 
     def requestElevator(self, floor, direction): 
         elevator = self.findElevator(floor, direction)
-        #console.log(elevator);
         elevator.floorRequestList.append(floor)
         elevator.move()
         elevator.operateDoors()
@@ -113,10 +108,7 @@ class Column:
             referenceGap = bestElevatorInformations["referenceGap"]
             
         return bestElevator
-            # console.log("-------------");
-            # console.log(bestElevatorInformations);
-            # console.log(bestScore);
-            # console.log("-------------");
+          
         
         
     
@@ -149,7 +141,6 @@ class Elevator:
         self.floorRequestButtonList = []
         self.floorRequestList = []
         self.screenDisplay = None
-        # this.bestElevator;
 
         self.createFloorRequestButtons(amountOfFloors)
 
@@ -170,7 +161,6 @@ class Elevator:
     def move(self):
         while len (self.floorRequestList) != 0:
             destination = self.floorRequestList[0]
-            # console.log(destination)
             self.status = "moving"
             if (self.currentFloor < destination):
                 self.direction = "up"
@@ -193,18 +183,15 @@ class Elevator:
         self.status = "idle"
 
     def sortFloorList(self):
-        #console.log(this.requestList, "sortfloorlist");
         if self.direction == "up":
            self.floorRequestList.sort()
         else:
-            # this.requestList.sort();
             self.floorRequestList.reverse()
         
     
 
     def operateDoors(self):
         self.door.status = "opened"
-        #setTimeout(operateDoors(), 5000)
         if self.status == "moving":
            self.door="closed" 
 
