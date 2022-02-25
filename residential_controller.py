@@ -1,4 +1,4 @@
-from typing_extensions import self
+#from typing_extensions import self
 
 
 class Column:
@@ -9,12 +9,12 @@ class Column:
         self.status = "online"
         self.elevatorList = []
         self.callButtonList = []
-        self.createElevators(amountOfFloors, amountOfElevators)
-        self.createCallButtons(amountOfFloors)
+        self.createElevators (amountOfFloors, amountOfElevators)
+        self.createCallButtons (amountOfFloors)
 
 
 
-    def createCallButtons(amountOfFloors): 
+    def createCallButtons(self, amountOfFloors): 
         buttonFloor = 1
         callbuttonID = 0
 
@@ -38,7 +38,7 @@ class Column:
             buttonFloor+=1
    
 
-    def createElevators(amountOfFloors, amountOfElevators):
+    def createElevators(self, amountOfFloors, amountOfElevators):
         for i in range (amountOfFloors):
             elevatorID = i + 1
             elevator = Elevator(elevatorID, amountOfFloors)
@@ -46,7 +46,7 @@ class Column:
         
     
 
-    def requestElevator(floor, direction): 
+    def requestElevator(self, floor, direction): 
         elevator = self.findElevator(floor, direction)
         #console.log(elevator);
         elevator.floorRequestList.append(floor)
@@ -55,13 +55,14 @@ class Column:
         print (elevator)
     
 
-    def findElevator(requestedFloor, requestedDirection): 
+    def findElevator(self, requestedFloor, requestedDirection): 
         bestScore = 5
         referenceGap = 10000000
         bestElevator
         bestElevatorInformations
 
         #this.elevatorList.forEach(function (elevator)
+        
         for i in range (elevatorList): 
             if requestedFloor == self.elevatorList[i].currentFloor and self.elevatorList[i].status == "idle" and requestedDirection == self.elevatorList[i].direction :
             
@@ -120,14 +121,14 @@ class Column:
         
     
 
-    def checkIfElevatorIsBetter(scoreToCheck, newElevator, bestScore, referenceGap, bestElevator, floor):
+    def checkIfElevatorIsBetter(self, scoreToCheck, newElevator, bestScore, referenceGap, bestElevator, floor):
         if scoreToCheck < bestScore :
             bestScore = scoreToCheck
             bestElevator = newElevator
             referenceGap = Math.abs(newElevator.currentFloor - floor)  #print(abs(integer))
         elif bestScore == scoreToCheck:
             #console.log("test")
-            gap = Math.abs(newElevator.currentFloor - floor)
+            gap = abs(newElevator.currentFloor - floor)
             if (referenceGap > gap):
                 bestElevator = newElevator
                 referenceGap = gap
@@ -221,7 +222,7 @@ class FloorRequestButton:
         self.floor = floor
 
 class Door:
-    def __init__(self, id):
+    def __init__(self, id, status):
         self.ID = id
         self.status = status
     
