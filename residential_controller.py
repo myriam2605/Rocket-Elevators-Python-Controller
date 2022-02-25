@@ -212,10 +212,3 @@ class Door:
     def __init__(self, id):
         self.ID = id
         self.status= "closed"
-    
-column= Column(1,10,2)
-column.elevatorList[0].currentFloor = 10
-column.elevatorList[0].status = 'idle'
-column.elevatorList[1].currentFloor = 3
-column.elevatorList[1].status = 'idle'
-column.requestElevator(5, "up")
