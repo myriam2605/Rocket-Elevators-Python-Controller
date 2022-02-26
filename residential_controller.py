@@ -14,7 +14,6 @@ class Column:
         self.createCallButtons (amountOfFloors)
 
 
-
     def createCallButtons(self, amountOfFloors): 
         buttonFloor = 1
         callbuttonID = 0
@@ -109,9 +108,6 @@ class Column:
             
         return bestElevator
           
-        
-        
-    
 
     def checkIfElevatorIsBetter(self, scoreToCheck, newElevator, bestScore, referenceGap, bestElevator, floor):
         if scoreToCheck < bestScore :
@@ -130,7 +126,6 @@ class Column:
                 "referenceGap": referenceGap}
         
     
-
 class Elevator:
     def __init__(self, id, amountOfFloors):
         self.ID = id
